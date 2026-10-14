@@ -5,7 +5,9 @@ Entrega: **19/10** · Defesas: 20 e 22/10 · Trabalho **individual**.
 
 > O enunciado não pede para escolher entre as bases: as duas devem ser analisadas.
 
-## Bases (baixar do Kaggle e salvar em `data/`)
+## Bases (Kaggle, já salvas em `data/`)
+
+Para baixar de novo: `python baixar_dados.py` (não precisa de login no Kaggle).
 
 | Base | Fonte | Arquivo esperado | Esperado |
 |------|-------|------------------|----------|
@@ -83,23 +85,31 @@ análises mais interessantes e por quê; limitações.
 ## Status / próximos passos
 
 - [x] Estrutura do repositório e plano
-- [ ] Baixar os dois CSVs do Kaggle para `data/`
-- [ ] Criar `TP1.ipynb` seguindo as seções acima (texto em português)
-- [ ] Registrar descobertas abaixo e commitar a cada etapa
+- [x] Baixar os dois CSVs do Kaggle para `data/` (14/10, conferidos: 8807×12 e 1000×8)
+- [x] `TP1.ipynb` com as 8 seções, executado do início ao fim sem erros (14/10)
+- [ ] Revisar o texto com a própria voz e treinar a defesa (20 e 22/10)
 
 ## Diário de descobertas
 
-- **Students** (checagem preliminar numa cópia da base, a confirmar com o arquivo do Kaggle):
-  sem ausentes e sem duplicados; médias Matemática 66,1 · Leitura 69,2 · Escrita 68,1;
-  existe nota 0 em Matemática (possível outlier).
-- **Netflix:** ainda não analisada. Problemas conhecidos a verificar: muitos ausentes em
-  `director`, `cast`, `country`; `country` com vários países por célula (separar com
-  `str.split(', ')` + `explode`); `duration` mistura minutos (filmes) e temporadas (séries);
-  `date_added` como texto; alguns valores de duração aparecem por engano em `rating`.
+**Netflix**
+- Sem duplicados; ausentes: `director` 2634 (30%), `country` 831, `cast` 825, `date_added` 10.
+- 3 especiais do Louis C.K. tinham a duração em `rating` → corrigido na seção 1.
+- 69,6% filmes; EUA em 3690 títulos (Índia 2ª, 1046); TV-MA + TV-14 ≈ 61%; pico de lançamentos em 2018.
+- Livre 1: títulos adicionados até 1 ano após o lançamento caem de 82% (2015) para 51% (2021);
+  defasagem média dos filmes sobe de 0,4 para 7,7 anos.
+- Livre 2: mediana de duração dos filmes cai de ~106–114 min (1970–2000) para 97 min (2010/2020).
+
+**Students**
+- Sem ausentes/duplicados; médias Mat 66,1 · Leit 69,2 · Escr 68,1; nota 0 em Matemática.
+- 45,9% com média geral ≥ 70; curso preparatório +7,6 pontos; grupo E maior média (72,75).
+- Livre 1: gênero inverte por disciplina (homens +5,1 em Mat; mulheres +7,1 Leit e +9,2 Escr).
+- Livre 2: almoço subsidiado + curso (67,8) ≈ almoço padrão sem curso (68,3); aprovados 21% → 69%
+  entre os extremos.
 
 ## Como executar
 
 ```bash
 pip install -r requirements.txt
+python baixar_dados.py   # só se data/ estiver vazio
 jupyter notebook TP1.ipynb
 ```
