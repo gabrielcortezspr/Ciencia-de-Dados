@@ -5,7 +5,9 @@ Entrega: **19/10** · Defesas: 20 e 22/10 · Trabalho **individual**.
 
 > O enunciado não pede para escolher entre as bases: as duas devem ser analisadas.
 
-## Bases (baixar do Kaggle e salvar em `data/`)
+## Bases (Kaggle, já salvas em `data/`)
+
+Para baixar de novo: `python baixar_dados.py` (não precisa de login no Kaggle).
 
 | Base | Fonte | Arquivo esperado | Esperado |
 |------|-------|------------------|----------|
@@ -83,23 +85,25 @@ análises mais interessantes e por quê; limitações.
 ## Status / próximos passos
 
 - [x] Estrutura do repositório e plano
-- [ ] Baixar os dois CSVs do Kaggle para `data/`
+- [x] Baixar os dois CSVs do Kaggle para `data/` (14/10, conferidos: 8807×12 e 1000×8)
 - [ ] Criar `TP1.ipynb` seguindo as seções acima (texto em português)
 - [ ] Registrar descobertas abaixo e commitar a cada etapa
 
 ## Diário de descobertas
 
-- **Students** (checagem preliminar numa cópia da base, a confirmar com o arquivo do Kaggle):
-  sem ausentes e sem duplicados; médias Matemática 66,1 · Leitura 69,2 · Escrita 68,1;
+- **Students** (confirmado com o arquivo do Kaggle): sem ausentes e sem duplicados; médias Matemática 66,1 · Leitura 69,2 · Escrita 68,1;
   existe nota 0 em Matemática (possível outlier).
-- **Netflix:** ainda não analisada. Problemas conhecidos a verificar: muitos ausentes em
-  `director`, `cast`, `country`; `country` com vários países por célula (separar com
+- **Netflix** (checagem inicial no arquivo do Kaggle): sem duplicados; ausentes em
+  `director` 2634, `country` 831, `cast` 825, `date_added` 10, `rating` 4, `duration` 3;
+  3 durações caíram em `rating` ("74 min", "84 min", "66 min") — são os 3 `duration` ausentes.
+  A tratar: `country` com vários países por célula (separar com
   `str.split(', ')` + `explode`); `duration` mistura minutos (filmes) e temporadas (séries);
-  `date_added` como texto; alguns valores de duração aparecem por engano em `rating`.
+  `date_added` como texto.
 
 ## Como executar
 
 ```bash
 pip install -r requirements.txt
+python baixar_dados.py   # só se data/ estiver vazio
 jupyter notebook TP1.ipynb
 ```
