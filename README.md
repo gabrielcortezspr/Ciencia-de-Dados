@@ -87,6 +87,7 @@ análises mais interessantes e por quê; limitações.
 - [x] Estrutura do repositório e plano
 - [x] Baixar os dois CSVs do Kaggle para `data/` (14/10, conferidos: 8807×12 e 1000×8)
 - [x] `TP1.ipynb` com as 8 seções, executado do início ao fim sem erros (14/10)
+- [x] Revisão de inspeção (ver `REVISAO.md`) e correção dos gráficos (14/10)
 - [ ] Revisar o texto com a própria voz e treinar a defesa (20 e 22/10)
 
 ## Diário de descobertas
@@ -96,7 +97,8 @@ análises mais interessantes e por quê; limitações.
 - 3 especiais do Louis C.K. tinham a duração em `rating` → corrigido na seção 1.
 - 69,6% filmes; EUA em 3690 títulos (Índia 2ª, 1046); TV-MA + TV-14 ≈ 61%; pico de lançamentos em 2018.
 - Livre 1: títulos adicionados até 1 ano após o lançamento caem de 82% (2015) para 51% (2021);
-  defasagem média dos filmes sobe de 0,4 para 7,7 anos.
+  defasagem mediana dos filmes sobe de 0 para 3 anos. 12 das 14 datas impossíveis (adição antes do
+  lançamento) são séries → `release_year` das séries é o ano da última temporada.
 - Livre 2: mediana de duração dos filmes cai de ~106–114 min (1970–2000) para 97 min (2010/2020).
 
 **Students**
