@@ -87,6 +87,7 @@ análises mais interessantes e por quê; limitações.
 - [x] Estrutura do repositório e plano
 - [x] Baixar os dois CSVs do Kaggle para `data/` (14/10, conferidos: 8807×12 e 1000×8)
 - [x] `TP1.ipynb` com as 8 seções, executado do início ao fim sem erros (14/10)
+- [x] Revisão dos números (19/10): empates no top 10, gêneros, `loc`/`iloc`, desvio-padrão, célula de ambiente
 - [ ] Revisar o texto com a própria voz e treinar a defesa (20 e 22/10)
 
 ## Diário de descobertas
@@ -108,8 +109,12 @@ análises mais interessantes e por quê; limitações.
 
 ## Como executar
 
-```bash
-pip install -r requirements.txt
-python baixar_dados.py   # só se data/ estiver vazio
-jupyter notebook TP1.ipynb
-```
+Abra `TP1.ipynb` (VS Code, Jupyter ou Colab), escolha qualquer kernel Python 3 e rode tudo. A primeira
+célula prepara o ambiente sozinha:
+
+- se pandas/matplotlib não estiverem no kernel, cria `.venv/` com o mesmo Python, instala o
+  `requirements.txt` nele e o usa na sessão (~2 min na primeira vez; depois reaproveita);
+- se os CSVs não estiverem em `data/`, roda `baixar_dados.py`.
+
+No VS Code, se ele pedir para instalar o `ipykernel` ao escolher o kernel, aceite. Depois da primeira
+execução também dá para escolher o próprio `.venv` como kernel.
